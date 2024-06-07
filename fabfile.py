@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-#fabric
+# fabric
 from fabric.api import local
 from datetime import datetime
 from os.path import isdir
+
 
 def do_pack():
     """Generates a .tgz archive from the web_static directory."""
@@ -16,6 +17,7 @@ def do_pack():
     except Exception as e:
         return None
 
+
 def deploy():
     """Placeholder for deployment process."""
     archive_path = do_pack()
@@ -26,4 +28,3 @@ def deploy():
     print(f"Deploying {archive_path}...")
     # Add your deployment logic here
     return True
-
