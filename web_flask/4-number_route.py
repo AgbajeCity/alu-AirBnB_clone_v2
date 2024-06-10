@@ -18,6 +18,25 @@ def hbnb():
     """ Display HBNB! """
     return "HBNB"
 
+
+@app.route("/c/<text>")
+def text_c(text):
+    """ Display C """
+    return "C {}".format(text.replace("_", " "))
+
+
+@app.route("/python/")
+@app.route("/python/<text>")
+def text_py(text="is cool"):
+    """ Display Python """
+    return "Python {}".format(text.replace("_", " "))
+
+
+@app.route("/number/<int:n>")
+def num_n(n):
+    """Displaying the number n"""
+    return "{} is a number".format(n)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
     app.url_map.strict_slashes = False
